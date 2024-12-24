@@ -18,7 +18,12 @@ public class Array1D {
 		System.out.println("Iterating in 1D array");
 		for (int idx = 0; idx < covidCases.length; idx++) {
 			System.out.println("covidCases[" + idx + "] is: " + covidCases[idx]);
-			
+		}
+
+		System.out.println("Iterating with enhanced for loop");
+		for (int element : covidCases) { // initially zeroth index of covidCases will be copied, and continue with the
+											// rest, meaning no index management here!
+			System.out.println("Element is: " + element);
 		}
 
 	}
