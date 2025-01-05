@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Random;
 import java.util.LinkedList;
 import java.util.Stack;
+import java.util.ListIterator;
 
 public class ListExample {
 
@@ -75,6 +76,30 @@ public class ListExample {
 		// Print the sorted list
 		System.out.println("Sorted List: " + numbers);
 
+		// 5th example
+
+		LinkedList<String> cities = new LinkedList<>();
+
+		// Adding 5 city names
+		cities.add("New York");
+		cities.add("London");
+		cities.add("Tokyo");
+		cities.add("Paris");
+		cities.add("Dubai");
+
+		// Inserting a city at the second position (index 1)
+		cities.add(1, "Khorazem");
+		System.out.println("After Insertion at 2nd Position: " + cities);
+
+		cities.removeLast();
+		System.out.println("After Removing Last City: " + cities);
+
+		// Print the list in reverse order
+		System.out.print("List in Reverse Order: ");
+		ListIterator<String> iterator = cities.listIterator(cities.size());
+		while (iterator.hasPrevious()) {
+			System.out.print(iterator.previous() + " ");
+		}
 	}
 
 }
