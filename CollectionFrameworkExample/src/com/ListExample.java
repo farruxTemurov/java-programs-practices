@@ -1,11 +1,6 @@
 package com;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
-import java.util.LinkedList;
-import java.util.Stack;
-import java.util.ListIterator;
+import java.util.*;
 
 public class ListExample {
 
@@ -100,6 +95,39 @@ public class ListExample {
 		while (iterator.hasPrevious()) {
 			System.out.print(iterator.previous() + " ");
 		}
+
+		// 6th example
+		System.out.println("_____________");
+		ArrayList<String> student_names = new ArrayList<>();
+
+		student_names.add("Tim");
+		student_names.add("John");
+		student_names.add("Ben");
+		student_names.add("Ambrose");
+		student_names.add("Aidan");
+
+		ArrayList<String> employees = new ArrayList<>();
+
+		employees.add("Akash");
+		employees.add("Vinodh");
+		employees.add("Ray");
+		employees.add("Kennedy");
+		employees.add("Ben");
+
+		// Merge both lists into a new list
+		ArrayList<String> mergedList = new ArrayList<>();
+		mergedList.addAll(student_names);
+		mergedList.addAll(employees);
+
+		// Remove duplicates by converting to a Set and back to a List
+		Set<String> set = new HashSet<>(mergedList); // Using HashSet to remove duplicates
+		List<String> finalList = new ArrayList<>(set);
+
+		// Sort the final list alphabetically
+		Collections.sort(finalList);
+
+		// Print the final sorted list
+		System.out.println("Sorted List (with no duplicates): " + finalList);
 	}
 
 }
