@@ -1,6 +1,8 @@
 package com;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 import java.util.LinkedList;
 import java.util.Stack;
 
@@ -47,6 +49,32 @@ public class ListExample {
 		System.out.println("Search " + ss.search(300)); // displays element position start from top
 		System.out.println("Search " + ss.search(200));
 		System.out.println("Search " + ss.search(800)); // if not present return -1
+		System.out.println("_____________");
+
+		// 4th Example
+
+		ArrayList<Integer> numbers = new ArrayList<>();
+		Random rand = new Random();
+
+		for (int i = 0; i < 10; i++) {
+			numbers.add(rand.nextInt(100) + 1);
+		}
+
+		// Print the initial list
+		System.out.println("Original List: " + numbers);
+
+		// Remove numbers greater than 50
+		numbers.removeIf(num -> num > 50);
+
+		// Print after removal
+		System.out.println("After Removal (>50): " + numbers);
+
+		// Sort the list in ascending order
+		Collections.sort(numbers);
+
+		// Print the sorted list
+		System.out.println("Sorted List: " + numbers);
+
 	}
 
 }
