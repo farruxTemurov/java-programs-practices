@@ -46,6 +46,26 @@ public class SetExample {
 		ts1.clear();
 		System.out.println("Size " + ts1.size());
 		System.out.println("Empty " + ts1.isEmpty());
+		System.out.println("_____________");
+		// 3rd Example
+
+		Set<Integer> numbers = new HashSet<>();
+		Random rand = new Random();
+		while (numbers.size() < 10) {
+			int randomNum = rand.nextInt(50) + 1;
+			numbers.add(randomNum);
+		}
+		System.out.println("HashSet (after adding random integers): " + numbers);
+
+		int duplicate = 25;
+		boolean added = numbers.add(duplicate);
+		if (!added) {
+			System.out.println("Duplicate " + duplicate + " was NOT added to the set!");
+		}
+
+		for (int number : numbers) {
+			System.out.println(number);
+		}
 	}
 
 }
