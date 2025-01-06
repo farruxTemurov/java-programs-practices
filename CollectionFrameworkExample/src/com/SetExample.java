@@ -66,6 +66,35 @@ public class SetExample {
 		for (int number : numbers) {
 			System.out.println(number);
 		}
+
+		System.out.println("_____________");
+		// 4th Example
+
+		TreeSet<Double> numberSet = new TreeSet<>();
+
+		numberSet.add(12.5);
+		numberSet.add(7.3);
+		numberSet.add(19.8);
+		numberSet.add(3.4);
+		numberSet.add(15.6);
+
+		System.out.println("TreeSet (sorted): " + numberSet);
+
+		// Printing the smallest and largest numbers
+		System.out.println("Smallest number: " + numberSet.first());
+		System.out.println("Largest number: " + numberSet.last());
+
+		// Trying adding a duplicate number
+		boolean duplicateN = numberSet.add(7.3);
+
+		if (!duplicateN) {
+			System.out.println("Duplicate 7.3 was NOT added to the set.");
+		} else {
+			System.out.println("Duplicate 7.3 was added (unexpected).");
+		}
+
+		System.out.println("TreeSet after adding duplicate: " + numberSet);
+
 	}
 
 }
