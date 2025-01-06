@@ -95,6 +95,28 @@ public class SetExample {
 
 		System.out.println("TreeSet after adding duplicate: " + numberSet);
 
+		System.out.println("_____________");
+		// 5th Example
+		Set<Integer> list1 = new HashSet<>();
+		Set<Integer> list2 = new HashSet<>();
+
+		list1.add(2);
+		list1.add(34);
+		list1.add(4);
+		list1.add(82);
+
+		list2.add(2);
+		list2.add(15);
+		list2.add(82);
+		list2.add(98);
+
+		System.out.println("List 1: " + list1);
+		System.out.println("List 2: " + list2);
+
+		// Find the intersection by retaining common element
+		list1.retainAll(list2); // Modifies set1 to keep only elements also in set2
+
+		System.out.println("Intersection: " + list1);
 	}
 
 }
