@@ -59,14 +59,44 @@ public class AccountServiceImp implements AccountService {
 
 	@Override
 	public String withdraw(int accno, float amount) {
-		// TODO Auto-generated method stub
-		return null;
+		// Find the account with the given account number
+		for (Account acc : listOfAccounts) {
+			if (acc.getAccno() == accno) {
+				float currentBalance = acc.getAmount();
+				float transactionCharge = 10.0f; // Transaction fee
+
+				// Check if the withdrawal amount + transaction charge is less than or equal to
+				// the current balance
+				if (amount + transactionCharge <= currentBalance) {
+					// Deduct the withdrawal amount and transaction fee from the account balance
+					acc.setAmount(currentBalance - (amount + transactionCharge));
+					return "Withdrawal successful. New balance: " + acc.getAmount() + " (Transaction charge: "
+							+ transactionCharge + ")";
+				} else {
+					return "Insufficient funds. Transaction failed.";
+				}
+			}
+		}
+		return "Account not found for account number: " + accno;
 	}
 
 	@Override
 	public String deposit(int accno, float amount) {
-		// TODO Auto-generated method stub
-		return null;
+		for (Account acc : listOfAccounts) {
+			if (acc.getAccno() == accno) {
+				float currentBalance = acc.getAmount();
+				float transactionCharge = 10.0f; // Transaction fee
+
+				// Deposit the amount after deducting the transaction fee
+				acc.setAmount(currentBalance + (amount - transactionCharge));
+
+				// Return success message with the updated balance
+				return "Deposit successful. New balance: " + acc.getAmount() + " (Transaction charge: "
+						+ transactionCharge + ")";
+			}
+		}
+		// If account not found, return error message
+		return "Account not found for account number: " + accno;
 	}
 
 }

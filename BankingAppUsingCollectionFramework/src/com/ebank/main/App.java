@@ -49,15 +49,19 @@ public class App {
 			case 4:
 				System.out.println("Plz enter the account number from which you want to withdraw");
 				accno = sc.nextInt();
+				System.out.println("Plz enter the amount to withdraw");
 				amount = sc.nextFloat();
-				as.withdraw(accno, amount);
+				String withdrawResult = as.withdraw(accno, amount); // Call the withdraw method
+				System.out.println(withdrawResult); // Print the result (success or failure)
 				break;
 			case 5:
-//				System.out.println("Plz enter your account number ");
-//				accno = sc.nextInt();
-//				String balanceResult = as.findAccountBalance(accno); // Get the result from the service
-//				System.out.println(balanceResult); // Print the result (balance or not found message)
-//				break;
+				System.out.println("Plz enter the account number to deposit into");
+				accno = sc.nextInt();
+				System.out.println("Plz enter the amount to deposit");
+				amount = sc.nextFloat();
+				String depositResult = as.deposit(accno, amount); // Call the deposit method
+				System.out.println(depositResult); // Print the result (success or failure)
+				break;
 			default:
 				System.out.println("Wrong choice");
 				break;
