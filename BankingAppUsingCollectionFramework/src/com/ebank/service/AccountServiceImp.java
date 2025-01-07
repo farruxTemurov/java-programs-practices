@@ -12,7 +12,6 @@ public class AccountServiceImp implements AccountService {
 
 	@Override
 	public String createAccount(Account account) {
-		// TODO Auto-generated method stub
 		int flag = 0;
 		if (listOfAccounts.size() == 0) {
 			listOfAccounts.add(account);
@@ -50,8 +49,12 @@ public class AccountServiceImp implements AccountService {
 
 	@Override
 	public String findAccountBalance(int accno) {
-		// TODO Auto-generated method stub
-		return null;
+		for (Account acc : listOfAccounts) {
+			if (acc.getAccno() == accno) {
+				return "Account Balance: " + acc.getAmount();
+			}
+		}
+		return "Account not found for account number: " + accno;
 	}
 
 	@Override

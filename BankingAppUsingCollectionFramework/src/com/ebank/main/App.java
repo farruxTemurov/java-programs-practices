@@ -18,7 +18,8 @@ public class App {
 		AccountService as = new AccountServiceImp();
 		String result;
 		do {
-			System.out.println("1:Create Account 2 : Display all account details");
+			System.out.println("1:Create Account, 2: Display all account details, 3: "
+					+ "Find account balance, 4: Withdraw, 5: Deposit");
 			System.out.println("Plz enter your choice");
 			choice = sc.nextInt();
 			switch (choice) {
@@ -39,6 +40,24 @@ public class App {
 			case 2:
 				as.displayAllAccountDetails();
 				break;
+			case 3:
+				System.out.println("Plz enter your account number ");
+				accno = sc.nextInt();
+				String balanceResult = as.findAccountBalance(accno); // Get the result from the service
+				System.out.println(balanceResult); // Print the result (balance or not found message)
+				break;
+			case 4:
+				System.out.println("Plz enter the account number from which you want to withdraw");
+				accno = sc.nextInt();
+				amount = sc.nextFloat();
+				as.withdraw(accno, amount);
+				break;
+			case 5:
+//				System.out.println("Plz enter your account number ");
+//				accno = sc.nextInt();
+//				String balanceResult = as.findAccountBalance(accno); // Get the result from the service
+//				System.out.println(balanceResult); // Print the result (balance or not found message)
+//				break;
 			default:
 				System.out.println("Wrong choice");
 				break;
@@ -47,7 +66,7 @@ public class App {
 			con = sc.next();
 		} while (con.equals("y"));
 
-		System.out.println("Thank you Visit once again!");
+		System.out.println("Thanks for your visit!");
 	}
 
 }
