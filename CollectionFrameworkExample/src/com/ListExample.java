@@ -128,6 +128,28 @@ public class ListExample {
 
 		// Print the final sorted list
 		System.out.println("Sorted List (with no duplicates): " + finalList);
+
+		// 6th example
+		System.out.println("_____________");
+		ArrayList<String> programming_langs = new ArrayList<>();
+		programming_langs.add("Java");
+		programming_langs.add("Python");
+		programming_langs.add("JavaScript");
+		programming_langs.add("C++");
+		programming_langs.add("Ruby");
+
+		System.out.println("Original list " + programming_langs);
+
+		Iterator<String> iterator2 = programming_langs.iterator();
+
+		while (iterator2.hasNext()) {
+			String programming_lang = iterator2.next();
+			if (programming_lang.startsWith("J")) {
+				iterator2.remove();
+			}
+		}
+
+		System.out.println("Modified list " + programming_langs);
 	}
 
 }
