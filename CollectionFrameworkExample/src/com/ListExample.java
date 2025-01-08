@@ -129,7 +129,7 @@ public class ListExample {
 		// Print the final sorted list
 		System.out.println("Sorted List (with no duplicates): " + finalList);
 
-		// 6th example
+		// 7th example
 		System.out.println("_____________");
 		ArrayList<String> programming_langs = new ArrayList<>();
 		programming_langs.add("Java");
@@ -150,6 +150,40 @@ public class ListExample {
 		}
 
 		System.out.println("Modified list " + programming_langs);
+
+		// 8th example
+		System.out.println("_____________");
+		LinkedList<Integer> ints = new LinkedList<>();
+
+		for (int i = 1; i <= 5; i++) {
+			ints.add(i);
+		}
+		System.out.println("Original List: " + ints);
+
+		// Step 2: Traverse the list forward and print each element
+		ListIterator<Integer> listIterator = ints.listIterator();
+		int position = 0;
+
+		while (listIterator.hasNext()) {
+			int current = listIterator.next();
+			System.out.print(current + " ");
+			position++;
+
+			// Step 3: Insert 100 after the second element
+			if (position == 2) {
+				listIterator.add(100);
+				System.out.println("\nInserted 100 after element 2");
+			}
+		}
+		System.out.println("\nList after insertion: " + ints);
+
+		// Step 4: Traverse the list backward and print each element
+		System.out.print("Backward Traversal: ");
+		while (listIterator.hasPrevious()) {
+			int current = listIterator.previous();
+			System.out.print(current + " ");
+		}
+
 	}
 
 }
