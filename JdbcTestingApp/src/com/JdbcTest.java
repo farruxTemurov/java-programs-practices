@@ -13,10 +13,10 @@ public class JdbcTest {
 			Statement stmt = con.createStatement();
 			// Insert Query
 
-//			int result = stmt.executeUpdate("insert into employee values(3,'John',31000)");
-//			if (result > 0) {
-//				System.out.println("Record inserted successfully");
-//			}
+			int result = stmt.executeUpdate("insert into employee values(5,'Tom',24000)");
+			if (result > 0) {
+				System.out.println("Record inserted successfully");
+			}
 
 			// Update Query
 
