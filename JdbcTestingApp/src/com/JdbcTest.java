@@ -13,19 +13,19 @@ public class JdbcTest {
 			Statement stmt = con.createStatement();
 			// Insert Query
 
-			int result = stmt.executeUpdate("insert into employee values(5,'Tom',24000)");
-			if (result > 0) {
-				System.out.println("Record inserted successfully");
-			}
+//			int result = stmt.executeUpdate("insert into employee values(5,'Tom',24000)");
+//			if (result > 0) {
+//				System.out.println("Record inserted successfully");
+//			}
 
 			// Update Query
 
-//			int result = stmt.executeUpdate("update employee set salary=48000 where eid=2");
-//			if (result > 0) {
-//				System.out.println("Record updated successfully");
-//			} else {
-//				System.out.println("Record not present");
-//			}
+			int result = stmt.executeUpdate("update employee set ename='Max' where eid=4");
+			if (result > 0) {
+				System.out.println("Record updated successfully");
+			} else {
+				System.out.println("Record not present");
+			}
 
 			// Delete Query
 //			int result = stmt.executeUpdate("delete from employee where eid=2");
