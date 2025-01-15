@@ -12,8 +12,6 @@ public class AccountDao {
 
 	public int createAccount(Account account) {
 		try {
-//		Class.forName("com.mysql.cj.jdbc.Driver");
-//		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "root@123");
 			Connection con = DbConnection.getDbConnection();
 			PreparedStatement pstmt = con.prepareStatement("insert into account values(?,?,?)");
 			pstmt.setInt(1, account.getAccno());
@@ -27,15 +25,13 @@ public class AccountDao {
 		}
 	}
 
-	public int withdrawn(Account account) {
+	public int withdraw(Account account) {
 		try {
-//		Class.forName("com.mysql.cj.jdbc.Driver");
-//		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "root@123");
 			Connection con = DbConnection.getDbConnection();
 			PreparedStatement pstmt = con.prepareStatement("update account set amount = amount-? where accno=?");
 			pstmt.setFloat(1, account.getAmount());
 			pstmt.setInt(2, account.getAccno());
-			int result = pstmt.executeUpdate(); // the query effect how many record it return count.
+			int result = pstmt.executeUpdate();
 			return result;
 		} catch (Exception e) {
 			System.out.println(e.toString());
@@ -45,8 +41,6 @@ public class AccountDao {
 
 	public int deposit(Account account) {
 		try {
-//		Class.forName("com.mysql.cj.jdbc.Driver");
-//		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "root@123");
 			Connection con = DbConnection.getDbConnection();
 			PreparedStatement pstmt = con.prepareStatement("update account set amount = amount+? where accno=?");
 			pstmt.setFloat(1, account.getAmount());
@@ -61,8 +55,6 @@ public class AccountDao {
 
 	public float findBalance(int accno) {
 		try {
-//		Class.forName("com.mysql.cj.jdbc.Driver");
-//		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "root@123");
 			Connection con = DbConnection.getDbConnection();
 			PreparedStatement pstmt = con.prepareStatement("select amount from account where accno=?");
 

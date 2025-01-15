@@ -16,9 +16,9 @@ public class App {
 		String result;
 		String con;
 		AccountService as = new AccountService();
-		System.out.println("Welcome to EBanking Application!");
+		System.out.println("Welcome to E-banking Application!");
 		do {
-			System.out.println("1:Account create 2 :withdrawn 3 :Deposit 4 :Balance");
+			System.out.println("1: Create Account 2: Withdraw 3: Deposit 4: Find Balance");
 			System.out.println("Enter your choice");
 			choice = sc.nextInt();
 
@@ -52,7 +52,7 @@ public class App {
 				acc1.setAccno(accno);
 				acc1.setAmount(amount);
 
-				result = as.withdrawn(acc1);
+				result = as.withdraw(acc1);
 				System.out.println(result);
 				break;
 
@@ -87,7 +87,7 @@ public class App {
 			System.out.println("Do you want to continue(y/n)");
 			con = sc.next();
 		} while (con.equals("y"));
-		System.out.println("Thank you Visit once again!");
+		System.out.println("Thanks for your visit!");
 	}
 
 }

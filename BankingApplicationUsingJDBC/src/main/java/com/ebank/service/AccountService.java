@@ -17,21 +17,21 @@ public class AccountService {
 		}
 	}
 
-	public String withdrawn(Account account) {
+	public String withdraw(Account account) {
 		float balance = ad.findBalance(account.getAccno());
 		if (balance == -1) {
 			return "Account doesn't exist";
 		} else {
 			if (balance > account.getAmount()) {
 
-				if (ad.withdrawn(account) > 0) {
-					return "Withdraw done successfully";
+				if (ad.withdraw(account) > 0) {
+					return "Withdrawn successfully";
 				} else {
 					return "Wasn't withdrawn";
 				}
 
 			} else {
-				return "InSufficient amount! you can't withdraw";
+				return "Insufficient amount! you can't withdraw";
 			}
 		}
 	}
