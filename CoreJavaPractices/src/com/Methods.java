@@ -29,6 +29,7 @@ public class Methods {
 		int[] productPrices = { 1200, 2100, 2400, 1294, 1099 };
 		int[] cricketerScores = { 12, 32, 40, 76, 71, 14 };
 		int[] covidCases = { 74134, 24223, 24802, 284112 };
+		String names = "John, Jim, Jakes, Mike, Silver";
 
 		// object construction statement
 		Methods ms = new Methods();
@@ -41,6 +42,11 @@ public class Methods {
 		System.out.println("Max in productPrices is " + ms.getMaxFromArray(productPrices));
 		System.out.println("Max in productPrices is " + ms.getMaxFromArray(cricketerScores));
 		System.out.println("Max in productPrices is " + ms.getMaxFromArray(covidCases));
+
+		// String methods
+
+		String subString = names.substring(6, 9);
+		System.out.println("subString from index 6 to 9 is " + subString);
 	}
 
 }
