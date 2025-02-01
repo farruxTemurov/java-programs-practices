@@ -35,6 +35,12 @@ public class Methods {
 		System.out.println("Max in productPrices is " + ms.getMax(productPrices));
 		System.out.println("Max in productPrices is " + ms.getMax(cricketerScores));
 		System.out.println("Max in productPrices is " + ms.getMax(covidCases));
+
+		// static method can be executed without object construction statement
+		System.out.println("________________");
+		System.out.println("Max in productPrices is " + ms.getMaxFromArray(productPrices));
+		System.out.println("Max in productPrices is " + ms.getMaxFromArray(cricketerScores));
+		System.out.println("Max in productPrices is " + ms.getMaxFromArray(covidCases));
 	}
 
 }
