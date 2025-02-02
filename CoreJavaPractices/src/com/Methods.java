@@ -1,5 +1,7 @@
 package com;
 
+import java.util.Scanner;
+
 public class Methods {
 
 	// non-static method | Executed with object's reference
@@ -30,6 +32,8 @@ public class Methods {
 		int[] cricketerScores = { 12, 32, 40, 76, 71, 14 };
 		int[] covidCases = { 74134, 24223, 24802, 284112 };
 		String names = "John, Jim, Jakes, Mike, Silver";
+		String email = "john@example.com";
+		String password = "john@123"; // it stores the refernce of the object.
 
 		// object construction statement
 		Methods ms = new Methods();
@@ -47,6 +51,26 @@ public class Methods {
 
 		String subString = names.substring(6, 9);
 		System.out.println("subString from index 6 to 9 is " + subString);
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter your email");
+		String userEmail = sc.next();
+
+		System.out.println("Enter the password");
+		String userPassword = sc.next();
+
+//		if (email.equals(userEmail) && password.equals(userPassword)) {
+//			System.out.println("Email and password matched");
+//		} else {
+//			System.out.println("Email and password didn't match");
+//		}
+		
+		if (email.equalsIgnoreCase(userEmail) && password.equals(userPassword)) {
+			System.out.println("Email and password matched");
+		} else {
+			System.out.println("Email and password didn't match");
+		}
+
 	}
 
 }
