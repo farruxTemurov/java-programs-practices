@@ -1,12 +1,12 @@
 package com;
 
-public class Product {
+public class Products {
 	String name;
 	double ratings;
 	String description;
 	double price;
 
-	public Product() {
+	public Products() {
 		super();
 		name = "NA";
 		ratings = 0.0;
@@ -14,7 +14,7 @@ public class Product {
 		price = 0.0;
 	}
 
-	public Product(String name, double ratings, String description, double price) {
+	public Products(String name, double ratings, String description, double price) {
 		super();
 		this.name = name;
 		this.ratings = ratings;

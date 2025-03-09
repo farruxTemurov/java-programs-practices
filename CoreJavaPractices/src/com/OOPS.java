@@ -57,7 +57,7 @@ public class OOPS {
 		user2.setUserData("John", "+9989912309811", "john@example.com", 'M', new Date(), "passwordJ");
 		user2.showUserData();
 
-		Product p1 = new Product();
+		Products p1 = new Products();
 		p1.setProductData("TV", 4.5, "Great TV", 90.9);
 		p1.showProductDetails();
 	}
