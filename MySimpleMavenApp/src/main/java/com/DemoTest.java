@@ -7,7 +7,6 @@ public class DemoTest {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			System.out.println("Driver loaded successfully");
 		} catch (Exception e) {
-			// TODO: handle exception
 			System.out.println(e);
 		}
 
